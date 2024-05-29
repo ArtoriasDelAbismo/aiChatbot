@@ -1,0 +1,4 @@
+.MuiOutlinedInput-notchedOutline, 
+.MuiOutlinedInput-input-root.Mui-focused {
+  border-color: white !important;
+}
