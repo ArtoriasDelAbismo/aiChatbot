@@ -16,11 +16,11 @@ const Signup = () => {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
     try {
-      toast.loading("Signing up", { id: "signup" });
+      toast.loading("Ingresando", { id: "signup" });
       await auth?.signup(name, email, password);
-      toast.success("Signed up!", { id: "signup" });
+      toast.success("Bienvenido!", { id: "signup" });
     } catch (error) {
-      toast.error("Could not sign up", { id: "signup" } );
+      toast.error("Error", { id: "signup" } );
     }
   }
   useEffect(() => {

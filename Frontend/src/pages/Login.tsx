@@ -15,11 +15,11 @@ const Login = () => {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
     try {
-      toast.loading("Signing in", { id: "login" });
+      toast.loading("Ingresando", { id: "login" });
       await auth?.login(email, password)
-      toast.success("Signed in!", { id: "login" });
+      toast.success("Login Exitoso", { id: "login" });
     } catch (error) {
-      toast.error("Could not sign in", { id: "login" } );
+      toast.error("Error", { id: "login" } );
     }
   }
   useEffect(() => {

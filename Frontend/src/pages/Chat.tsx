@@ -33,10 +33,10 @@ const Chat = () => {
   };
   const handleDeleteChats = async () => {
     try {
-      toast.loading("Deleting Chats", { id: "deletechats" });
+      toast.loading("Borrando Chats", { id: "deletechats" });
       await deleteUserChats();
       setChatMessages([]);
-      toast.success("Deleted Chats Successfully", { id: "deletechats" });
+      toast.success("Chats Borrados", { id: "deletechats" });
     } catch (error) {
       console.log(error);
       toast.error("Deleting chats failed", { id: "deletechats" });
@@ -44,11 +44,11 @@ const Chat = () => {
   };
   useLayoutEffect(() => {
     if (auth?.isLoggedIn && auth.user) {
-      toast.loading("Loading Chats", { id: "loadchats" });
+      toast.loading("Cargando Chats", { id: "loadchats" });
       getUserChats()
         .then((data) => {
           setChatMessages([...data.chats]);
-          toast.success("Successfully loaded chats", { id: "loadchats" });
+          toast.success("Chats cargados", { id: "loadchats" });
         })
         .catch((err) => {
           console.log(err);
@@ -60,7 +60,17 @@ const Chat = () => {
     if (!auth?.user) {
       return navigate("/login");
     }
+
   }, [auth]);
+
+  const buttonRef = useRef(null);
+
+  const handleKeyPress = (e) => {
+    if(e.key === "Enter") {
+      buttonRef.current.click()
+    }
+  }
+
   return (
     <Box
       sx={{
@@ -122,7 +132,7 @@ const Chat = () => {
               },
             }}
           >
-            Clear Conversation
+            Borrar chats
           </Button>
         </Box>
       </Box>
@@ -143,7 +153,7 @@ const Chat = () => {
             fontWeight: "600",
           }}
         >
-          Model - GPT 3.5 Turbo
+          TierraBot - Asesor personal
         </Typography>
         <Box
           sx={{
@@ -174,6 +184,7 @@ const Chat = () => {
         >
           {" "}
           <input
+          onKeyPress={handleKeyPress}
             ref={inputRef}
             type="text"
             style={{
@@ -186,7 +197,8 @@ const Chat = () => {
               fontSize: "20px",
             }}
           />
-          <IconButton onClick={handleSubmit} sx={{ color: "white", mx: 1 }}>
+          
+          <IconButton ref={buttonRef} onClick={handleSubmit} sx={{ color: "white", mx: 1 }}>
             <IoMdSend />
           </IconButton>
         </div>

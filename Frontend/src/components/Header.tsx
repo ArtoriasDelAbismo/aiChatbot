@@ -20,14 +20,14 @@ const Header = () => {
               <NavigationLink 
               bg= "#00fffc"
               to= "/chat"
-              text= "Go to chat"
+              text= "Ir al Chat"
               textColor= "black"
               />
               <NavigationLink 
               bg="#51538f"
               textColor="white"
               to="/"
-              text="logout"
+              text="salir"
               onClick={auth?.logout}
               />
             </>

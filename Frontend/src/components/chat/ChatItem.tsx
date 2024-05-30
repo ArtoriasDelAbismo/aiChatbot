@@ -22,7 +22,7 @@ const auth = useAuth()
       {auth?.user?.name[0]}
       </Avatar>
       <Box>
-        <Typography fontSize={"20px"}>{content}</Typography>
+        <Typography fontSize={"15px"}>{content}</Typography>
       </Box>
     </Box>
   ) : (
@@ -30,15 +30,15 @@ const auth = useAuth()
       sx={{
         display: "flex",
         p: 2,
-        bgcolor: "#004d56",
+        bgcolor: "#667178",
         gap: 2,
       }}
     >
-      <Avatar sx={{ ml: 0 }}>
-        <img src="openai.png" alt="openai" width={"30px"} />
+      <Avatar sx={{ ml: 0, backgroundColor: "#ffff" }}>
+        <img src="logo0.jpg" alt="openai" width={"30px"} />
       </Avatar>
       <Box>
-        <Typography fontSize={"20px"}>{content}</Typography>
+        <Typography fontSize={"15px"}>{content}</Typography>
       </Box>
     </Box>
   );

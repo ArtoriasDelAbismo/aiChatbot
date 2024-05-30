@@ -26,9 +26,25 @@ const Home = () => {
             gap:5,
             my: 10,
           }}>
-            <img src="" alt="" style={{width:"200px", margin:"auto"}}/>
-            <img src="" alt="" style={{width:"200px", margin:"auto"}}/>
           </Box>
+          <Box sx={{ display:"flex", width:"100%", mx:"auto" }}>
+          <img 
+            src="chatScreenshot.png" 
+            alt="chat"
+            style={{
+              display:"flex",
+              margin:"auto",
+              width:"60%",
+              borderRadius: 20,
+              boxShadow:"-5px -5px 105px #64f3d5",
+              marginTop:20,
+              marginBottom:20,
+              padding: 10,
+            }} 
+          
+          />
+          </Box>
+
         </Box>
       </Box>
     </div>
